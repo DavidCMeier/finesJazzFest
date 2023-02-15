@@ -10,6 +10,16 @@ export interface FeatureItem {
   title: string;
 }
 
+export interface EventItem {
+  description: string;
+  date: {
+    from: string;
+    to?: string;
+  };
+  title: string;
+  place: string;
+}
+
 export interface FooterLink {
   description: string;
   icon: string;

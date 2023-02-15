@@ -1,10 +1,9 @@
 ---
 import { Picture } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
-import astronautImage from "~/assets/astronaut.png";
+import astronautImage from "~/assets/astronaut.png"; //TODO Cambiar Imagen por logo
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
-import GitHubCorner from "./github-corner.astro";
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
@@ -12,28 +11,17 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 
 <section class="relative h-full bg-black">
   <Starfield />
-  <GitHubCorner />
   <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
     <HeroImage />
   </div>
   <div class="relative grid h-full place-items-center sm:grid-cols-2">
-    <h2
-      class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
-    >
-      <Icon name="logomark" class="h-24 text-white md:h-32" />
-      <div
-        class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
-      >
-        Build fast
-        <br /> websites,
-        <br /> faster.
-      </div>
-    </h2>
+
     <div
-      id="astronaut"
-      class="w-2/3 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start"
+      id="logo"
+    class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
       <Picture
+        id='logoInside'
         class="object-cover w-full h-full"
         src={astronautImage}
         widths={widths}
@@ -42,9 +30,48 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
         alt="A floating astronaut in a space suit"
       />
     </div>
+    <h2
+    class="w-2/3 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start"
+
+  >
+    <div
+      class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
+    >
+      2023
+    </div>
+  </h2>
   </div>
 </section>
 
+<script>
+let constrain = 100;
+let mouseOverContainer = document.getElementById("logo");
+let ex1Layer = document.getElementById("logoInside");
+
+function transforms(x:number, y:number, el:HTMLElement) {
+  let box = el.getBoundingClientRect();
+  let calcX = -(y - box.y - (box.height / 2)) / constrain;
+  let calcY = (x - box.x - (box.width / 2)) / constrain;
+  
+  return "perspective(100px) "
+    + "   rotateX("+ calcX +"deg) "
+    + "   rotateY("+ calcY +"deg) ";
+};
+
+ function transformElement(el:HTMLElement, xyEl: any) {
+  el.style.transform  = transforms.apply(null, xyEl);
+}
+
+mouseOverContainer!.onmousemove = (e:any) =>{
+  let xy = [e.clientX, e.clientY];
+  let position = xy.concat([ex1Layer]);
+
+  window.requestAnimationFrame(()=> {
+    transformElement(ex1Layer!, position);
+  });
+  
+};
+</script>
 <noscript>
   <style>
     #splash-bg-fallback {
@@ -52,33 +79,3 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     }
   </style>
 </noscript>
-
-<style>
-  @keyframes float {
-    0% {
-      transform: translate3d(0, 0, 0);
-    }
-
-    100% {
-      transform: translate3d(0, 30px, 0);
-    }
-  }
-
-  #astronaut {
-    animation: float linear 2.5s infinite alternate;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    #astronaut {
-      @apply animate-none;
-    }
-
-    :global(#starfield) {
-      @apply hidden;
-    }
-
-    #splash-bg-fallback {
-      @apply block;
-    }
-  }
-</style>

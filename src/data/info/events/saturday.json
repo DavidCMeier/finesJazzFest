@@ -1,0 +1,29 @@
+[
+    {
+      "title": "Orquesta de Vera",
+      "description":
+        "Orquesta de vera formada por músicos de gran calibre que nos deleitarán con un repertorio de jazz.",
+      "date": {
+        "from": "2023-04-13T20:00:00"
+      },
+      "place": "Espacio Escenico 'Aureliano lo que sea'"
+    },
+    {
+      "title": "Ada Trio Jazz Band With Dave Stansfield",
+      "description":
+        "Trío de Jazz formado por Angel Gutierrez a la Trompeta, David Calvo al bajo y contrabajo y Antonio Martos a la bateria. En esta ocasión los acompañará el gran saxofonista Inglés Dave Stansfield.",
+      "date": {
+        "from": "2023-04-13T21:00:00"
+      },
+      "place": "Espacio Escenico 'Aureliano lo que sea'"
+    },
+    {
+      "title": "ClassiJazz, tributo a Roy Hargrove y OTRO MAS QUE NO RECUERDO",
+      "description":
+        "El quinteto de ClassiJazz nos acompañará con un repertorio dedicado a Roy Hargroove y OTRO MAS QUE NO RECUERDO",
+      "date": {
+        "from": "2023-04-13T22:00:00"
+      },
+      "place": "Espacio Escenico 'Aureliano lo que sea'"
+    }
+  ]

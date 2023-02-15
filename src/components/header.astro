@@ -4,20 +4,19 @@ import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 
 const navItems: Array<NavItem> = [
-  { title: "Features", url: "#features" },
-  { title: "Compatibility", url: "#compatibility" },
-  { title: "Showcase", url: "#showcase" },
+  { title: "2023", url: "#2023" },
+  { title: "Historia", url: "#historia" },
+  { title: "Patrocinadores", url: "#patrocinadores" },
 ];
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class="absolute top-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
     <h1 class="sr-only">Astro</h1>
     <Icon name="logomark" class="h-10" />
-    <Icon name="wordmark" class="hidden h-4 sm:block" />
   </a>
   <div>
     <div class="flex items-center gap-6">
@@ -108,7 +107,8 @@ const navItems: Array<NavItem> = [
   closeNavButton.addEventListener("click", closeMenu);
 
   document.addEventListener("scroll", () => {
-    const d = page.clientHeight - page.scrollTop - header.offsetHeight;
+    console.log(header.offsetHeight)
+    const d = header.offsetHeight - page.scrollTop
     header.classList.toggle("fixed-header", d < 0);
   });
 
@@ -117,6 +117,8 @@ const navItems: Array<NavItem> = [
       closeMenu();
     }
   });
+
+
 </script>
 
 <noscript>

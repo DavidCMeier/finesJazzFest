@@ -1,0 +1,29 @@
+[
+    {
+      "title": "Presentación del Festival",
+      "description":
+        "Presentación del festival a cargo de los organizadores",
+      "date": {
+        "from": "2023-04-13T20:00:00"
+      },
+      "place": "Sala de exposiciones de Fines"
+    },
+    {
+      "title": "Exposición de arte",
+      "description":
+        "Exposición de arte a cargo de XXX, con la colaboración de XXX ",
+      "date": {
+        "from": "2023-04-13T20:00:00"
+      },
+      "place": "Sala de exposiciones de Fines"
+    },
+    {
+      "title": "Actuación de Saxofonista y Flautista",
+      "description":
+        "La pareja formada por XXX e YYY interpretaran distintos temas propios para ambientar la exposición",
+        "date": {
+        "from": "2023-04-13T20:30:00"
+      },
+      "place": "Sala de exposiciones de Fines"
+    }
+  ]

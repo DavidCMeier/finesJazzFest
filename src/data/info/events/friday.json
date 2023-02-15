@@ -1,0 +1,20 @@
+[
+    {
+      "title": "Quinteto de Jose",
+      "description":
+        "Quinteto Formado por Jose y XXX XXX XXX",
+      "date": {
+        "from": "2023-04-13T20:30:00"
+      },
+      "place": "Espacio Escenico 'Aureliano lo que sea'"
+    },
+    {
+      "title": "Big Band de Albox",
+      "description":
+        "Una big Bang dinámica dirigida por Ángel el tontainas, que tocará desde temas de Charlie Parker hasta Stevie Wonder, pasando por distintos estilos como la Bossa, Funky, Latin, etc... ",
+      "date": {
+        "from": "2023-04-13T21:30:00"
+      },
+      "place": "Espacio Escenico 'Aureliano lo que sea'"
+    }
+  ]
